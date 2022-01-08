@@ -14,7 +14,7 @@ pdfviewer()
 groffcompile()
 {
 	echo "compiling $1.ms into $1.pdf";
-	groff -ms "$1.ms" -Tpdf > "$1.pdf";
+	eqn "$1.ms" -Tpdf | refer -PS -e -p ~/"Documents/bibliography" | groff -ms -Tpdf > "$1.pdf";
 }
 mainloop()
 {
